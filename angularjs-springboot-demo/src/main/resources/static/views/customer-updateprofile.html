@@ -1,0 +1,49 @@
+<div class="container" id="content" >
+			<p>
+				<h2>Profile</h2>
+
+			</p>
+</div>
+			<!-- Page Content starts here -->
+<div class="container my-5" ng-controller="updateProfile" data-ng-init="loadCustomer('N')">
+	<h3><span ng-if="isupdateSuccess"><font color="green">{{profileUpdateMessage}}</font></span></h3>
+				<div class="row">
+					<div class="col-md-6">
+						<form ng-submit="updateCustomerProfile()">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<label for="email" class="col-form-label">Email</label>
+									<input type="text" class="form-control" id="email" ng-model="customerProfile.email" readonly>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="firstName" class="col-form-label">First Name</label>
+									<input type="text" class="form-control" id="firstName" ng-model="customerProfile.firstName" readonly>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="lastName" class="col-form-label">Last Name</label>
+									<input type="text" class="form-control" id="lastName" ng-model="customerProfile.lastName" readonly>
+								</div>
+								<div class="form-group col-md-6">
+									<label for="address1" class="col-form-label">Address Line 1</label>
+									<input type="text" class="form-control" id="address1" ng-model="customerProfile.address1">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="address2" class="col-form-label">Address Line 2</label>
+									<input type="text" class="form-control" id="address2" ng-model="customerProfile.address2">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="phone" class="col-form-label">Phone </label>
+									<input type="text" class="form-control" id="phone" ng-model="customerProfile.phone">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6 mt-5">
+									<input type="submit" class="btn btn-primary" value="save" >
+								</div>
+							</div>    
+						</form>
+					</div>
+				</div>
+</div>
+
+

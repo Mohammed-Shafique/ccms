@@ -1,0 +1,38 @@
+<div class="container" id="content">
+			<p>
+				<h2>Register Complaint</h2>
+				<h3></h3>
+			</p>
+</div>
+			<!-- Page Content starts here -->
+<div class="container my-5">
+	<h3><span ng-if="isRegistered"><font color="green">{{registeredMessage}}</font></span></h3>
+				<div class="row">
+					<div class="col-md-6">
+						<form name="registration" ng-submit="registerComplaints()">
+							<div class="row">
+								<div class="form-group col-md-6">
+								  <label for="product"  class="col-form-label">Select Product</label>
+								  <select ng-model="product" id="product" class="form-control" ng-options="p for p in products" required>
+								  </select>								
+								</div>
+								<div class="form-group col-md-6">
+									<label for="category" class="col-form-label">Select Category</label>
+									<select ng-model="category" class="form-control" id="category" ng-options="c for c in prdCategory" required>
+									</select>
+								</div>
+								<div class="form-group col-md-12">
+									<label for="email" class="col-form-label">Complaint Text</label>
+									<input type="text" class="form-control" id="email" placeholder="Complaint Text" ng-model="complaint" required>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-md-6 mt-5">
+									<input type="submit" class="btn btn-primary" value="Submit">
+								</div>
+							</div>    
+						</form>
+					</div>
+				</div>
+</div>

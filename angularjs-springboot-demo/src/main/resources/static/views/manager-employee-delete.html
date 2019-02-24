@@ -1,0 +1,35 @@
+<div class="container" id="content" data-ng-init="loadEmployees()">
+    <center><span ng-if="message"><font color="green">{{message}}</font> </span></center>
+<h2>Delete Employees</h2>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Address Line 1</th>
+        <th>Address Line 2</th>
+        <th>Employee Type</th>
+        <th>Employee Phone</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="e in employees">
+        <th>{{e.employeeId}}</th>
+        <th>{{e.employeeName}}</th>
+        <th>{{e.email}}</th>
+        <th>{{e.address1}}</th>
+        <th>{{e.address2}}</th>
+        <th>{{e.empType}}</th>
+        <th>{{e.phone}}</th>
+        <th><input type="button" class="btn btn-primary" value="Delete" ng-click="delete(e.employeeId)"></input></th>
+    </tr>
+
+    </tbody>
+</table>
+
+
+
+

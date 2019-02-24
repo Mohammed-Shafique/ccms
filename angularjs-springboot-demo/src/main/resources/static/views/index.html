@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./js/lib/angular.min.js"></script>
+		<script src="./js/lib/angular-route.min.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/LoginController.js"></script>
+		<script src="./js/home.js"></script>
+		<script src="./js/UpdateCustomer.js"></script>
+		<script src="./js/CustomerComplaints.js"></script>
+		<script src="./js/employeeController.js"></script>
+		<script type='text/javascript' src='./js/lib/jquery-3.3.1.slim.min.js'></script>
+		<script type='text/javascript' src='./js/lib/bootstrap.min.js'></script>
+		<link rel="stylesheet" href="./styles/bootstrap.min.css" />
+		<link rel="stylesheet" href="./styles/all.css">
+		<link rel="stylesheet" href="./styles/shards.min.css">
+		<link rel="stylesheet" href="./styles/sb-admin-2.min.css">
+		<link rel="stylesheet" href="./styles/sticky-footer-navbar.css">
+    </head>
+    <body ng-app="myApp"  ng-controller="home">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+
+		<a class="navbar-brand" href="/">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
+				aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown-3">
+			<ul class="navbar-nav mr-auto" ng-if="!loginStatus">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/signup">Customer Registration
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/custlogin">Customer Login</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/emplogin">Employee Login</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav mr-auto" ng-if="isCustomerLoggedIn">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/custProfile">Profile
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/regcomplaint">Register Complaint</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/trackComplaint">Track Complaint</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/changepassword">Change Password</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav mr-auto" ng-if="isManagerLoggedIn">
+				<li class="nav-item active">
+					<a class="nav-link" href="#/custProfile">Profile
+					</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/emp/trackComplaint">Track Complaint</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/emp/addemp">Add Employee</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#/emp/delemp">Delete Employee</a>
+				</li>
+			</ul>
+			<span ng-if="userName"><font color="white">Logged-in User:</font></span><span ng-if="userName" color="white"><font color="white">{{userName}}</font></span>
+			<span ng-if="loginStatus"><img src="./images/logout.png" height="42" width="42" alt="logout" ng-click="logout()"></img></span>
+		</div>
+
+	</nav>
+		<div class="container" id="content">
+			<span ng-if="!loginStatus">
+				<h2>Welcome to Customer Complaint Management System</h2>
+			</span>
+		</div>
+		<!-- Page Content starts here -->
+
+	<ng-view></ng-view>
+    </body>
+</html>

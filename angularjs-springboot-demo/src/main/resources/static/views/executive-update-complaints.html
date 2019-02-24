@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/all.css">
+	<link rel="stylesheet" href="../css/shards.min.css">
+	<script type='text/javascript' src='../js/jquery-3.3.1.slim.min.js'></script>
+	<script type='text/javascript' src='../js/bootstrap.min.js'></script>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+		<a class="navbar-brand" href="executive-home.html">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown-3">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="executive-update-complaints.html">Update Complaint</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="executive-track-complaint.html">Track Complaint</a>
+			</li>
+	</div>
+		<div>
+		<form align="right" name="form1" method="post" action="log_out.php">
+		<label>
+			<input name="submit2" type="submit" id="submit2" value="log out">
+		</label>
+		</form>
+		</div>
+	</nav>
+</head>
+<body>
+	<div class="container" id="content">
+		<p>
+			<h2>Customer Complaints</h2>
+			<h3></h3>
+		</p>
+	</div>
+	<!-- Page Content starts here -->
+	<div class="container my-5">
+		<table class="table table-hover">
+			<thead>
+				<th scope="col">cust-id</th>
+				<th scope="col">Product Name</th>
+				<th scope="col">Category</th>
+				<th scope="col">Complaint</th>
+				<th scope="col">Date</th>
+				<th scope="col">Status</th>
+				<th scope="col">Remarks</th>
+				<th scope="col">Save</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td scope="row">1</td>
+					<td>Laptop</td>
+					<td>Processor</td>
+					<td>Processor Damaged</td>
+					<td>18-Feb-2019</td>
+					<td>
+						<div class="form-group col-md-12">
+							<select class="custom-select" id="form1-state">
+								<option value="0" selected>Open</option>
+								<option value="1" selected>Assigned</option>
+								<option value="2">Inprogress</option>
+								<option value="3">Resolved</option>
+								<option value="4">NotResolved</option>
+								<option value="5">Closed</option>
+							</select>
+						</div>
+					</td>
+					<td><div class="form-group col-md-12">
+						<input type="text" class="form-control" id="Remarks" placeholder="Remarks" required>
+					</div>	</td>	
+					<td>
+						<div class="form-group col-md-12">
+							<input type="submit" class="btn btn-primary" value="Save">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td scope="row">2</td>
+					<td>Laptop</td>
+					<td>RAM</td>
+					<td>RAM damaged,Blue screen</td>
+					<td>18-Feb-2019</td>
+					<td>
+						<div class="form-group col-md-12">
+							<select class="custom-select" id="form1-state">
+								<option value="0" selected>Open</option>
+								<option value="1" selected>Assigned</option>
+								<option value="2">Inprogress</option>
+								<option value="3">Resolved</option>
+								<option value="4">NotResolved</option>
+								<option value="5">Closed</option>
+							</select>
+						</div></td>
+						<td><div class="form-group col-md-12">
+							<input type="text" class="form-control" id="Remarks" placeholder="Remarks" required>
+						</div>	
+					</td>	
+					<td>
+						<div class="form-group col-md-12">
+							<input type="submit" class="btn btn-primary" value="Save">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td scope="row">3</td>
+					<td>Desktop</td>
+					<td>Motherboard</td>
+					<td>Not starting</td>
+					<td>19-Feb-2019</td>
+					<td>
+						<div class="form-group col-md-12">
+							<select class="custom-select" id="form1-state">
+								<option value="0" selected>Open</option>
+								<option value="1" selected>Assigned</option>
+								<option value="2">Inprogress</option>
+								<option value="3">Resolved</option>
+								<option value="4">NotResolved</option>
+								<option value="5">Closed</option>
+							</select>
+						</div></td>
+						<td><div class="form-group col-md-12">
+							<input type="text" class="form-control" id="Remarks" placeholder="Remarks" required>
+						</div>
+					</td>	
+					<td>
+						<div class="form-group col-md-12">
+							<input type="submit" class="btn btn-primary" value="Save">
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+	<!-- Page Content ends here -->
+
+	<div class="container" id="footer">
+		<p>
+			Logged in as: <span>Shafique</span>, Role: <span>Customer Care Executive</span>
+		</p>
+	</div>
+</body>
+</html>
+

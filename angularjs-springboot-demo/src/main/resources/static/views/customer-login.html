@@ -1,0 +1,45 @@
+
+		<div class="container" id="content">
+			<p>
+				<h2>Customer Login</h2>
+			</p>
+		</div>
+		<!-- Page Content starts here -->
+			<div class="container my-5">
+				<h3><span ng-if="isLoginfailed"><font color="red">{{message}}</font></span></h3>
+				<div class="row">
+					<div class="col-md-6">
+							<!--<form name="register_form" action="/action_page.php" onsubmit="return validateForm()">-->
+							<form name="myForm" novalidate ng-submit="login('C')">
+							<div class="row">
+							  
+								<div class="form-group col-md-6">
+									<label for="email" class="col-form-label">Email</label>
+									<input type="text" class="form-control" id="email" placeholder="Email" ng-model="formData.email" required>
+									<span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+										<span ng-show="myForm.email.$error.required">Email is required.</span>
+										<span ng-show="myForm.email.$error.email">Invalid email address.</span>
+      								</span>
+								</div>
+							   
+								<div class="form-group col-md-6">
+									<label for="Password" class="col-form-label">Password</label>
+									<input type="text" class="form-control" id="password" placeholder="Password" ng-model="formData.password" required>
+									<span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+										<span ng-show="myForm.password.$error.required">password is required.</span>
+										<span ng-show="myForm.password.$error.minlength">Too short!</span>
+									<span ng-show="myForm.password.$error.maxlength">Too long!</span>
+      								</span>
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-md-6 mt-5">
+									<input type="submit" class="btn btn-primary" ng-disabled="myForm.$invalid" value="Login">
+								</div>
+							</div>    
+						</form>
+					</div>
+				</div>
+			</div>
+

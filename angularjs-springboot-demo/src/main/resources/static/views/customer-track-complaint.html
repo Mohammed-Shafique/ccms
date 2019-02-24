@@ -1,0 +1,50 @@
+<div class="container" id="content-outer" data-ng-init="loadCustomerComplaints()">
+<div class="container" id="content">
+			<p>
+				<h2>Track Complaint</h2>
+				<h3></h3>
+			</p>
+</div>
+		<!-- Page Content starts here -->
+<div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+					<div class="form-group col-md-6">
+						<label for="track_id" class="col-form-label">Complaint ID</label>
+						<input type="text" class="form-control" id="track_id" ng-model="searchComplainId" placeholder="Complaint Id" required>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mt-5">
+							<input type="submit" class="btn btn-primary" ng-click="searchComplaints()" value="Track">
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<table class="table table-hover">
+	<thead>
+	<tr>
+		<th>Complaint ID</th>
+		<th>Product Name</th>
+		<th>Category</th>
+		<th>Complaint Text</th>
+		<th>Status</th>
+		<th>Complaint Date</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="complaint in complaints">
+		<th>{{complaint.complaintId}}</th>
+		<th>{{complaint.productName}}</th>
+		<th>{{complaint.productCategory}}</th>
+		<th>{{complaint.complaint}}</th>
+		<th>{{complaint.complaintStatus}}</th>
+		<th>{{complaint.complaintDate}}</th>
+	</tr>
+
+	</tbody>
+</table>
+</div>

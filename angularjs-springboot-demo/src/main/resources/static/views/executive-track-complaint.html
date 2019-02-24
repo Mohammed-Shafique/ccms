@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/all.css">
+		<link rel="stylesheet" href="../css/shards.min.css">
+		<script type='text/javascript' src='../js/jquery-3.3.1.slim.min.js'></script>
+		<script type='text/javascript' src='../js/bootstrap.min.js'></script>
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-secondary mb-4">
+		  <a class="navbar-brand" href="executive-home.html">Home</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown-3" aria-controls="navbarNavDropdown-3"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse mr-auto" id="navbarNavDropdown-3">
+			<ul class="navbar-nav mr-auto">
+			 <li class="nav-item active">
+				<a class="nav-link" href="executive-update-complaints.html">Update Complaint</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="executive-track-complaint.html">Track Complaint</a>
+			  </li>
+			 </div>
+			  <div><form align="right" name="form1" method="post" action="log_out.php">
+  <label>
+  <input name="submit2" type="submit" id="submit2" value="log out">
+  </label>
+</form></div>
+		</nav>
+    </head>
+    <body>
+		<div class="container" id="content">
+			<p>
+				<h2>Track Complaint</h2>
+				<h3></h3>
+			</p>
+		</div>
+		<!-- Page Content starts here -->
+		<div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="#" method="post">
+                <div class="row">
+					<div class="form-group col-md-6">
+						<label for="track_id" class="col-form-label">Complaint ID</label>
+						<input type="text" class="form-control" id="complaint_id" placeholder="Complaint Id" required>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mt-5">
+							<input type="submit" class="btn btn-primary" value="Track">
+						</div>
+					</div>    
+                </form>
+                </div>
+            </div>
+        </div>
+		<div class "row">
+			<table class="table">
+			  <thead>
+				<th>Product Name</th>
+				<th>Category</th>
+				<th>Complaint</th>
+				<th>Date</th>
+				<th>Complaint Status</th>
+				<th>Remarks</th>
+			  </thead>
+			  <tbody>
+			  <tr>
+			   <td>Mobile</td>
+			   <td>Screen</td>
+				<td>Screen Damaged</td>
+				<td>10-Feb-2019</td>
+				<td>InProgress</td>
+				<td>This is displayed on Track button pressed</td>
+			  </tr>
+			  </tbody>
+			</table>		
+		</div>
+        </div>
+    </body>
+</html>

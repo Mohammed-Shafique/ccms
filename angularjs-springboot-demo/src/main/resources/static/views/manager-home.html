@@ -1,0 +1,106 @@
+<div class="container" data-ng-init="loadComplaints()">
+
+<div class="container" id="content">
+			<p>
+				<h2>Customer Complaints</h2>
+			</p>
+			<!-- Content Row -->
+          <div class="row">
+
+            <!-- Open complaints -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">{{dashboard.openTickets}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Complaints InProgress -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">In Progress</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+			
+            <!-- Resolved complaints -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Resolved</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- UnResolved complaints -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-error text-uppercase mb-1">UnResolved</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+			
+          </div> <!-- Content Row End -->
+
+		</div>
+			<!-- Page Content starts here -->
+			<div class="container my-5">
+			<table class="table">
+			  <thead>
+			   <th>customer-id</th>
+			   <th>Complaint-id</th>
+				<th>Product Name</th>
+				<th>Category</th>
+				<th>Complaint</th>
+				<th>Date</th>
+				<th>Status</th>
+				<th>Select</th>
+			  </thead>
+			  <tbody>
+			  <tr ng-repeat="complaint in dashboard.complaints">
+				<td>{{complaint.customerId}}</td>
+				<td>{{complaint.complaintId}}</td>
+				<td>{{complaint.productName}}</td>
+				<td>{{complaint.productCategory}}</td>
+				<td>{{complaint.complaint}}</td>
+				<td>{{complaint.complaintDate}}</td>
+				<td>{{complaint.complaintStatus}}</td>
+                  <td> <input id="{{complaint.customerId}}" type="checkbox" ng-model="complaint.Selected" ng-change="changeSelected(complaint)" />  <br></td>
+			  </tr>
+			  </tbody>
+			</table>
+			<div class="form-group col-md-3">
+				<label for="form1-state" class="col-form-label"><b>Assign To Executive</b></label>
+				<select class="custom-select" id="form1-state" ng-model="selectedEmp">
+                 <option value="select">Select Employee</option>
+				 <option ng-repeat="employee in dashboard.employees" value="{{employee.employeeId}}">{{employee.employeeName}}</option>
+				</select>
+			</div>
+			<div class="form-group col-md-3">
+				<input type="submit" class="btn btn-primary" value="Submit" ng-click="submitData(e)">
+			</div>
+</div>
+</div>

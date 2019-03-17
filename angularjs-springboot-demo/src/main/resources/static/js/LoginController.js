@@ -1,7 +1,7 @@
 var app = angular.module("myApp");
 
-app.controller("login", function ($scope, $rootScope, $http, $location) {
-        $scope.message;
+app.controller("login", function ($scope, $rootScope, $http, $location, authFactory) {
+        $scope.message
         $scope.userName;
         $scope.accountCreated;
         $scope.accountCreatedMessage;
@@ -47,6 +47,9 @@ app.controller("login", function ($scope, $rootScope, $http, $location) {
                     $rootScope.userName=loginFormData.userName;
                     $rootScope.loginStatus =loginFormData.loginStatus;
                     $rootScope.customerId = loginFormData.customerId;
+                        //route Authentication code
+                     authFactory.setAuthenticationRole(loginFormData.customerId);
+                         //route Authentication code
                     if(loginFormData.empType === 'CUST'){
                         $rootScope.isCustomerLoggedIn = true;
                         $location.path('/customer/home');

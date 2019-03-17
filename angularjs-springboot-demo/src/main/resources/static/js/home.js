@@ -1,6 +1,6 @@
 var app = angular.module("myApp");
 
-app.controller("home", ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location) {
+app.controller("home", ['$scope', '$rootScope', '$http','$location', function($scope, $rootScope, $http, $location, authFactory) {
 
    $scope.logout = function(){
          var data={
@@ -9,6 +9,9 @@ app.controller("home", ['$scope', '$rootScope', '$http','$location', function($s
              $http.post('/logout', data)
                  .success(function (response) {
                      if(response.loginStatus === false){
+                        // route authentication code
+                           authFactory.setAuthenticationRole(undefined);
+                        // route authentication code
                            $rootScope.accountCreatedMessage = undefined;
                            $rootScope.accountCreated=false;
                            $rootScope.loginStatus =false;
